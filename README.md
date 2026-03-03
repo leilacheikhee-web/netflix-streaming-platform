@@ -2,79 +2,43 @@
 
 ## Task
 
-Master edge computing and streaming patterns to build a Netflix-scale global content delivery platform. Implement edge functions with geographical optimization, React streaming with progressive loading, real-time communication with Server-Sent Events, and performance monitoring.
+Build a Netflix-scale global content delivery platform using edge computing, React streaming with progressive loading, real-time communication with Server-Sent Events, and performance monitoring.
 
 ## Description
-
-Successfully built a complete Netflix streaming platform demonstrating:
-
-**Step 1: Edge Computing Foundation** ✅
-- Location-aware edge function (`/api/geo`)
-- Returns region-specific Netflix content
-- Detects user region and customizes response
-- Reduces latency from 100ms → <50ms
-
-**Step 2: React Streaming & Progressive Loading** ✅
-- Progressive loading with skeleton UI
-- Shows content as it loads
-- Smooth user experience
-- Home page with hero and trending content
-
-**Step 3: Real-Time Communication (SSE)** ✅
-- Server-Sent Events endpoint (`/api/stream`)
-- Live streaming activity updates
-- Events from multiple global regions
-- 2-second event intervals
-
-**Step 4: Performance Monitoring Dashboard** ✅
-- Real-time latency metrics
-- Throughput tracking (Mbps)
-- Cache hit rate visualization
-- Regional performance status
-
+I successfully created a complete Netflix streaming platform with four main components:
+Step 1: Edge Computing Foundation
+Location-aware edge function at /api/geo that detects user region and returns region-specific Netflix content. When a user in Japan accesses the API, they get Japanese Netflix content optimized for their region. When a user in the UK accesses it, they get UK content. This reduces latency from 100ms to under 50ms by bringing the server closer to the user.
+Step 2: React Streaming and Progressive Loading
+The home page loads with skeleton UI showing placeholders first. While the user sees the Netflix header immediately, the actual content loads in the background. After 2 seconds, real content appears smoothly without any blank screen waiting. This makes the site feel faster to users.
+Step 3: Real-Time Communication with Server-Sent Events
+Created an /api/stream endpoint that continuously sends live events showing streaming activity from different global regions. Every 2 seconds, a new event arrives showing things like "User started watching" or "Quality adjusted to 4K" from regions like US, EU, APAC, and LATAM. This demonstrates how Netflix shows live activity to users in real-time.
+Step 4: Performance Monitoring Dashboard
+A dashboard page that displays real-time performance metrics including latency in milliseconds, throughput in Mbps, cache hit rate as a percentage, and the current region. The metrics update every 2 seconds showing how performance changes across different regions.
 ## Installation
-```bash
-npm install --legacy-peer-deps
-npm run dev -- -p 3001
-```
-
-## Usage
-
-**Test Edge Function (Location-Aware Content):**
-```bash
-curl http://localhost:3001/api/geo
-curl -H "x-region: GB" http://localhost:3001/api/geo
-curl -H "x-region: JP" http://localhost:3001/api/geo
-curl -H "x-region: IN" http://localhost:3001/api/geo
-```
-
-**Test Real-Time Streaming:**
-```bash
-curl http://localhost:3001/api/stream
-```
-
-**Access Pages:**
-- Home page: `http://localhost:3001/`
-- Dashboard: `http://localhost:3001/dashboard`
-
-## Key Learnings
-
-**Edge Computing:** Brings computation closer to users, reducing latency and distributing load across global servers.
-
-**React Streaming:** Progressive loading provides better user experience with skeleton UI and gradual content appearance.
-
-**Server-Sent Events:** Real-time, one-way communication for live activity streams without polling overhead.
-
-**Performance Monitoring:** Real-time metrics enable continuous optimization and regional performance tracking.
-
-## Technologies
-
-- Next.js 12.3.4
-- React
-- Server-Sent Events (SSE)
-- Node.js
-
+Install dependencies:
+ npm install --legacy-peer-deps
+ npm run dev -- -p 3001
+## Testing the Features
+Test the edge function with different regions:
+ curl http://localhost:3001/api/geo
+ curl -H "x-region: GB" http://localhost:3001/api/geo
+ curl -H "x-region: JP" http://localhost:3001/api/geo
+Test real-time streaming events:
+ curl http://localhost:3001/api/stream
+Access the web pages:
+Home page: http://localhost:3001/
+Dashboard: http://localhost:3001/dashboard
+## What I Learned
+Edge Computing: The core idea is that servers running close to users provide much faster responses than servers in distant data centers. Netflix can't run everything from one place because a user in Tokyo would wait forever for a response from a server in California.
+React Progressive Loading: Users prefer seeing something immediately rather than waiting for everything to load at once. Showing skeleton placeholders while real content loads makes the experience feel smoother and faster.
+Server-Sent Events: Instead of the client repeatedly asking "Do you have updates?" every second, SSE lets the server push updates whenever they happen. It's simpler than WebSockets and perfect for one-way streaming of data.
+Performance Monitoring: You can't optimize what you don't measure. Real-time metrics showing latency, throughput, and cache hit rates help identify problems and understand user experience across different regions.
+## Usage 
+Next.js 12.3.4
+React
+Server-Sent Events (SSE)
+Node.js
 ## The Core Team
 
-Made at [Qwasar SV -- Software Engineering School](https://qwasar.io)
-
+Leila cheikhe
+SchoolMade at [Qwasar SV -- Software Engineering School](https://qwasar.io)
