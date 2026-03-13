@@ -1,12 +1,12 @@
 # Netflix Streaming Platform - Edge Computing & Streaming Mastery
 
-## 🚀 Live Demo (Deployed on Vercel)
-- 🌍 **Home:** https://netflix-streaming-platform-kuo795vi5.vercel.app
-- 📊 **Dashboard:** https://netflix-streaming-platform-kuo795vi5.vercel.app/dashboard
-- 🔌 **Geo API (US):** https://netflix-streaming-platform-kuo795vi5.vercel.app/api/geo
-- 🔌 **Geo API (UK):** https://netflix-streaming-platform-kuo795vi5.vercel.app/api/geo *(header: x-region: GB)*
-- 🔌 **Geo API (JP):** https://netflix-streaming-platform-kuo795vi5.vercel.app/api/geo *(header: x-region: JP)*
-- 📡 **Stream API:** https://netflix-streaming-platform-kuo795vi5.vercel.app/api/stream
+##  Live Demo (Deployed on Vercel)
+-  **Home:** https://netflix-streaming-platform-kuo795vi5.vercel.app
+-  **Dashboard:** https://netflix-streaming-platform-kuo795vi5.vercel.app/dashboard
+-  **Geo API (US):** https://netflix-streaming-platform-kuo795vi5.vercel.app/api/geo
+-  **Geo API (UK):** https://netflix-streaming-platform-kuo795vi5.vercel.app/api/geo *(header: x-region: GB)*
+-  **Geo API (JP):** https://netflix-streaming-platform-kuo795vi5.vercel.app/api/geo *(header: x-region: JP)*
+-  **Stream API:** https://netflix-streaming-platform-kuo795vi5.vercel.app/api/stream
 
 ## Task
 Build a Netflix-scale global content delivery platform using edge computing, React streaming with progressive loading, real-time communication with Server-Sent Events, and performance monitoring.
